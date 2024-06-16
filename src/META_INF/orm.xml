@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="1.0" xmlns="http://java.sun.com/xml/ns/persistence/orm"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+
+    <named-query name="STD.query3_getYearAndNameOfStudents">
+        <query>
+            SELECT k.year_of_joining, k.student_name FROM StudentEntity k GROUP BY k.year_of_joining, k.student_name
+        </query>
+    </named-query>
+
+    <named-query name="STD.query4_deleteStudentByName">
+        <query>
+            DELETE FROM StudentEntity k WHERE k.student_name = :name
+        </query>
+    </named-query>
+
+</entity-mappings>
